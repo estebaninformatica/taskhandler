@@ -1,0 +1,9 @@
+<%= simple_form_for ([@project,@task,@subtask]) do |f| %>
+  <%= f.input :title, :as => :text  ,:input_html => { :cols => 50, :rows => 1 } %>
+  <%= f.input :description, :as => :text  ,:input_html => { :cols => 50, :rows => 3 }%>
+  <%= f.input :question, :as => :text  ,:input_html => { :cols => 50, :rows => 3 } %>
+  <%= f.collection_radio_buttons :type_question , @subtask.all_type_questions, :first,:first %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>    
+  </div>
+<% end %>

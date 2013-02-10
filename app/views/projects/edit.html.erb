@@ -1,0 +1,9 @@
+<%- model_class = Project -%>
+<div class="page-header">
+  <h4><%= @project.title %></h4>
+  <ul class="breadcrumb">
+    <li><%= link_to t('views.projects.Projects'), projects_path , :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "t('views.projects.Projects')" } %> <span class="divider" >/</span></li>
+    <li class="active"><%= @project.title%></li>
+  </ul>
+</div>
+<%= render :partial => 'form' %>

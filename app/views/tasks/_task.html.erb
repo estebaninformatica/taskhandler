@@ -1,0 +1,14 @@
+<tr>
+    <td><i class="icon-hand-right"></i><%= link_to task.title, project_task_path(@project,task) %></td>
+    <td><%= task.description %></td>
+    <td><%=l task.created_at %></td>
+    <% if can? :destroy, @subtask %>
+      <td>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                     [@project, task],
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-mini btn-danger' %>
+      </td>
+    <% end %>
+</tr>

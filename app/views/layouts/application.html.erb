@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskHandler</title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+ <body class="<%= controller_name %> <%= action_name %>">
+  <header>
+        <%= render 'layouts/navbar' %>
+  </header>
+  <div id="container" class="container">
+    <div class="row">
+      <div class="span9">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+     
+    </div>
+    <footer>
+      <p>&copy; Esteban Fuhrmann - UNLP 2012</p> 
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%- model_class = Subtask -%>
+<div class="page-header">
+ <ul class="breadcrumb">
+    <li><%= link_to "Projects", projects_path , :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Projects" } %> <span class="divider" >/</span></li>
+    <li><%= link_to @project.title, project_path(@project), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Task" }  %> <span class="divider">/</span></li>
+    <li><%= link_to @task.title, project_task_path(@project,@task), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "SubTask" }  %> <span class="divider">/</span></li>
+
+    <li class="active"><%= @subtask.title%></li>
+  </ul>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @subtask.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
+  <dd><%= @time_difference %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @subtask.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:question) %>:</strong></dt>
+  <dd><%= @subtask.question %></dd>
+</dl>
+<%= render :partial => 'results/question' %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              project_task_path(@project,@task), :class => 'btn'  %>
+  <% if can? :edit, @project %>            
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_project_task_subtask_path(@subtask), :class => 'btn' %>
+  <% end %>
+</div>

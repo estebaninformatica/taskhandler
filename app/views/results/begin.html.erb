@@ -1,0 +1,39 @@
+<%- model_class = Subtask -%>
+<div class="page-header">
+
+ <ul class="breadcrumb">
+    <li><%= link_to "Projects", projects_path , :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Projects" } %> <span class="divider" >/</span></li>
+    <li><%= link_to @project.title, project_path(@project), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Task" }  %> <span class="divider">/</span></li>
+    <li><%= link_to @task.title, project_task_path(@project,@task), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "SubTask" }  %> <span class="divider">/</span></li>
+
+    <li class="active"><%= @subtask.title%></li>
+  </ul>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:project) %>:</strong></dt>
+  <dd><%= @project.title %>
+  <a href="#"   rel="popover" title="<%= @project.title %>" data-content="<%= @project.description %>" ><i class="icon-info-sign"></i></a></dd>
+  <dt><strong><%= model_class.human_attribute_name(:task) %>:</strong></dt>
+  <dd><%= @task.title %>
+  <a href="#"   rel="popover" title="<%= @task.title %>" data-content="<%= @task.description %>" ><i class="icon-info-sign"></i></a></dd>
+  <dt><strong><%= model_class.human_attribute_name(:subtask) %>:</strong></dt>
+  <dd><%= @subtask.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @subtask.description %></dd>
+</dl>
+<%= link_to "end",
+              project_task_subtask_end_path(@project,@task,@subtask),
+               :class => "btn btn-warning btn-large",
+               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+            
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              project_task_path(@project,@task), :class => 'btn'  %>
+  <% if can? :edit, @project %>            
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_project_task_subtask_path(@subtask), :class => 'btn' %>
+  <% end %>
+
+</div>

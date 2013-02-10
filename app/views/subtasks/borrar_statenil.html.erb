@@ -1,0 +1,6 @@
+<% if !@subtask.my_result(current_user).nil?   %>
+  <%= link_to raw("<i class=' icon-thumbs-up'></i> begin"),
+              project_task_subtask_begin_path(@project,@task,@subtask),
+               :class => "btn btn-warning",
+               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>         
+<%end%>

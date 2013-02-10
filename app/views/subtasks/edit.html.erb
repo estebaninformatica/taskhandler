@@ -1,0 +1,9 @@
+<%- model_class = Subtask -%>
+<ul class="breadcrumb">
+    <li><%= link_to "Projects", projects_path , :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Projects" } %> <span class="divider" >/</span></li>
+    <li><%= link_to @project.title, project_path(@project), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Task" }  %> <span class="divider">/</span></li>
+    <li><%= link_to @task.title, project_task_path(@project,@task), :rel =>"tooltip" ,:data => {:placement =>"top" , :"original-title" => "Task" }  %> <span class="divider">/</span></li>
+
+    <li class="active"><%= @subtask.title%></li>
+  </ul>
+<%= render :partial => 'form' %>

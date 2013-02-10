@@ -1,0 +1,40 @@
+<%= form_for([@project,@task,@subtask,@result]) do |f| %>
+  <% if @result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%=t 'views.results.errors', count_errors: pluralize(@result.errors.count, t('nice.error')), object: 'result' %></h2>
+
+      <ul>
+      <% @result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :subtask %><br />
+    <%= f.text_field :subtask %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :question_score %><br />
+    <%= f.number_field :question_score %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :time_begin %><br />
+    <%= f.time_select :time_begin %>
+  </div>
+  <div class="field">
+    <%= f.label :time_end %><br />
+    <%= f.time_select :time_end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

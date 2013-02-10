@@ -1,0 +1,35 @@
+<h1><%= title t('views.results.show') %></h1>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.subtask' %>:</b>
+  <%= @result.subtask %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.user' %>:</b>
+  <%= @result.user %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.question_score' %>:</b>
+  <%= @result.question_score %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.comment' %>:</b>
+  <%= @result.comment %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.time_begin' %>:</b>
+  <%= @result.time_begin %>
+</p>
+
+<p>
+  <b><%=t 'activerecord.attributes.result.time_end' %>:</b>
+  <%= @result.time_end %>
+</p>
+
+
+<%= link_to t('nice.edit'), edit_result_path(@result) %> |
+<%= link_to t('nice.back'), results_path %>

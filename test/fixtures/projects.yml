@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+ one:
+   title: facebook
+   description: proyecto facebook
+
+# two:
+#   title: MyString
+#   description: MyText

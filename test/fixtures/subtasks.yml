@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# one:
+#   description: MyText
+#   title: MyText
+#   task: 
+#   question: MyText
+#   results: 
+#   enabled: false
+
+# two:
+#   description: MyText
+#   title: MyText
+#   task: 
+#   question: MyText
+#   results: 
+#   enabled: false

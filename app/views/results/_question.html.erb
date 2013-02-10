@@ -1,0 +1,14 @@
+<div  style="text-align: center; vertical-align: middle;">
+<%= simple_form_for @result, :html => { :class => 'form-inline' } do |f| %>
+  <% if @result.subtask.type_question == "all" %>
+    <%= f.input :question_score, :collection => 1..5, :as => :radio_buttons, :label =>"Valores:", item_wrapper_class: 'inline' %> 
+    <%= f.input :comment, :as => :text  ,:input_html => { :cols => 50, :rows => 3 }, :label =>"Respuesta:"%>
+  <% elsif @result.subtask.type_question == "select_number"%>
+    <%= f.input :question_score, :collection => 1..5, :as => :radio_buttons, :label =>"Valores:", item_wrapper_class: 'inline' %> 
+  <% else %>      
+    <%= f.input :comment, :as => :text  ,:input_html => { :cols => 50, :rows => 3 }, :label =>"Respuesta:"%>
+  <% end %>
+  <%= f.submit t("results.questions.send"), :class => 'btn btn-primary' %>
+  
+<% end %>
+</div>

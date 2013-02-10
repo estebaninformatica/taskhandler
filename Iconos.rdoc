@@ -1,0 +1,6 @@
+<i class="icon-time"></i>
+<i class="icon-hand-up"></i>
+<i class="icon-thumbs-up"></i>
+<i class="icon-hand-right"></i>
+<i class="icon-question-sign"></i>
+<i class="icon-star-empty"></i>

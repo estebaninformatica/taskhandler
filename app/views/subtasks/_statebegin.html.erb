@@ -1,0 +1,16 @@
+<center>
+<%=	image_tag('trabajando.gif')%>
+<%= link_to  image_tag('finish.png') ,
+              project_task_subtask_end_path(@project,@task,@subtask),
+               :class => "btn btn-info",
+               :data => { :placement =>"bottom" ,:"original-title" => t("subtasks.links.helpfinish"), :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, 
+               :rel => "tooltip"  %>
+
+<%= link_to  image_tag('pause.png') ,
+              project_task_subtask_pause_path(@project,@task,@subtask),
+               :class => "btn btn-info",
+               :data => { :placement =>"bottom" ,:"original-title" => t("subtasks.links.helppause"), :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, 
+               :rel => "tooltip"  %>
+</center>                
+
+
